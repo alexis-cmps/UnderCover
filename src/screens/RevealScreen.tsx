@@ -44,31 +44,7 @@ export function RevealScreen() {
     }
   };
 
-  const getRoleConfig = () => {
-    switch (currentPlayer.role) {
-      case "CIVIL":
-        return {
-          text: "Civil 🟢",
-          gradient: "from-green-500 to-emerald-500",
-          bg: "from-green-900/30 to-emerald-900/20",
-        };
-      case "UNDERCOVER":
-        return {
-          text: "Undercover 🔴",
-          gradient: "from-red-500 to-rose-500",
-          bg: "from-red-900/30 to-rose-900/20",
-        };
-      case "WHITE":
-        return {
-          text: "Mr.White ⚪️",
-          gradient: "from-neutral-200 to-neutral-400",
-          bg: "from-neutral-800/30 to-neutral-900/20",
-        };
-    }
-  };
-
   const word = getWord();
-  const roleConfig = getRoleConfig();
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-neutral-950 via-neutral-900 to-neutral-950 p-4 flex items-center justify-center">
@@ -96,34 +72,35 @@ export function RevealScreen() {
             </Button>
           </Card>
         ) : (
-          <Card className={`text-center bg-gradient-to-br ${roleConfig.bg} backdrop-blur border-neutral-700/50`}>
-            <h2 className="text-lg font-semibold mb-3 text-neutral-400">
-              Votre rôle
-            </h2>
-            <p className={`text-4xl font-bold mb-8 bg-gradient-to-r ${roleConfig.gradient} bg-clip-text text-transparent`}>
-              {roleConfig.text}
-            </p>
-
-            {word ? (
+          <Card className="text-center bg-gradient-to-br from-neutral-800/50 to-neutral-800/30 backdrop-blur border-neutral-700/50">
+            {currentPlayer.role === "WHITE" ? (
               <>
-                <h3 className="text-md font-semibold mb-3 text-neutral-400">
+                <h2 className="text-lg font-semibold mb-3 text-neutral-400">
+                  Votre rôle
+                </h2>
+                <p className="text-4xl font-bold mb-8 bg-gradient-to-r from-neutral-200 to-neutral-400 bg-clip-text text-transparent">
+                  Mr.White ⚪️
+                </p>
+                <div className="mb-8 p-6 bg-neutral-900/50 rounded-2xl border-2 border-neutral-700/50">
+                  <p className="text-lg text-neutral-300 mb-2">
+                    Vous n'avez pas de mot
+                  </p>
+                  <p className="text-sm text-neutral-500">
+                    Vous devez deviner le mot des civils !
+                  </p>
+                </div>
+              </>
+            ) : (
+              <>
+                <h2 className="text-lg font-semibold mb-3 text-neutral-400">
                   Votre mot secret
-                </h3>
+                </h2>
                 <div className="mb-8 p-6 bg-neutral-900/50 rounded-2xl border-2 border-neutral-700/50">
                   <p className="text-5xl font-bold text-blue-400">
                     {word}
                   </p>
                 </div>
               </>
-            ) : (
-              <div className="mb-8 p-6 bg-neutral-900/50 rounded-2xl border-2 border-neutral-700/50">
-                <p className="text-lg text-neutral-300 mb-2">
-                  Vous n'avez pas de mot
-                </p>
-                <p className="text-sm text-neutral-500">
-                  Vous devez deviner le mot des civils !
-                </p>
-              </div>
             )}
 
             <p className="text-sm text-neutral-500 mb-6">
