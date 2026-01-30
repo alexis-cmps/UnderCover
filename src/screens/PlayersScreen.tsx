@@ -33,8 +33,8 @@ export function PlayersScreen() {
   const canStart = players.length >= 3;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-neutral-950 via-neutral-900 to-neutral-950 p-4 md:p-8 flex items-center justify-center">
-      <div className="max-w-2xl w-full flex flex-col gap-12 pb-32">
+    <div className="min-h-screen bg-gradient-to-br from-neutral-950 via-neutral-900 to-neutral-950 p-6 md:p-8 flex items-center justify-center">
+      <div className="max-w-2xl w-full flex flex-col gap-6">
         <div className="text-center">
           <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-2">
             Configuration
@@ -215,20 +215,16 @@ export function PlayersScreen() {
         </Card>
 
         {/* Bouton démarrer */}
-        <div className="fixed bottom-0 left-0 right-0 p-4 md:p-6 bg-gradient-to-t from-neutral-950 via-neutral-950/95 to-transparent flex justify-center">
-          <div className="max-w-2xl w-full">
-            <Button
-              fullWidth
-              onClick={startGame}
-              disabled={!canStart}
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-base md:text-lg py-3 md:py-4 shadow-lg shadow-blue-500/20"
-            >
-              {canStart
-                ? "🚀 Démarrer la partie"
-                : `Minimum 3 joueurs (${players.length}/3)`}
-            </Button>
-          </div>
-        </div>
+        <Button
+          fullWidth
+          onClick={startGame}
+          disabled={!canStart}
+          className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-base md:text-lg py-4 shadow-xl shadow-blue-500/20"
+        >
+          {canStart
+            ? "🚀 Démarrer la partie"
+            : `Minimum 3 joueurs (${players.length}/3)`}
+        </Button>
       </div>
     </div>
   );
