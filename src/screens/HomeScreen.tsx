@@ -8,7 +8,7 @@ export function HomeScreen() {
   const setPhase = useGame((s) => s.setPhase);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-neutral-950 via-blue-950/20 to-purple-950/20 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-neutral-950 via-blue-950/20 to-purple-950/20 flex items-center justify-center p-6 md:p-8">
       <div className="text-center max-w-md w-full">
         <div className="mb-8 animate-bounce">
           <h1 className="text-8xl mb-4">🕵️</h1>

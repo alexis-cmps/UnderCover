@@ -45,7 +45,7 @@ export function RevealElimScreen() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-neutral-950 via-neutral-900 to-neutral-950 p-4 flex items-center justify-center">
+    <div className="min-h-screen bg-gradient-to-br from-neutral-950 via-neutral-900 to-neutral-950 p-6 md:p-8 flex items-center justify-center">
       <div className="max-w-md w-full">
         <Card className={`text-center bg-gradient-to-br ${roleConfig.bg} backdrop-blur border-neutral-700/50`}>
           <div className="text-6xl mb-6">🚫</div>

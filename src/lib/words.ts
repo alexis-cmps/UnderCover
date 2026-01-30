@@ -110,7 +110,18 @@ export const WORD_PAIRS: Words[] = [
 
 /**
  * Sélectionne une paire de mots aléatoire.
+ * Les mots peuvent être inversés aléatoirement (civil ↔ undercover).
  */
 export function pickWords(): Words {
-  return WORD_PAIRS[Math.floor(Math.random() * WORD_PAIRS.length)];
+  const pair = WORD_PAIRS[Math.floor(Math.random() * WORD_PAIRS.length)];
+  
+  // 50% de chance d'inverser les mots
+  if (Math.random() < 0.5) {
+    return {
+      civilian: pair.undercover,
+      undercover: pair.civilian,
+    };
+  }
+  
+  return pair;
 }

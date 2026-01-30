@@ -33,9 +33,9 @@ export function PlayersScreen() {
   const canStart = players.length >= 3;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-neutral-950 via-neutral-900 to-neutral-950 p-4 flex items-center justify-center">
-      <div className="max-w-2xl w-full">
-        <div className="text-center mb-6">
+    <div className="min-h-screen bg-gradient-to-br from-neutral-950 via-neutral-900 to-neutral-950 p-6 md:p-8 flex items-center justify-center">
+      <div className="max-w-2xl w-full flex flex-col gap-12">
+        <div className="text-center">
           <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-2">
             Configuration
           </h1>
@@ -43,33 +43,33 @@ export function PlayersScreen() {
         </div>
 
         {/* Configuration visible en permanence */}
-        <Card className="mb-6 bg-gradient-to-br from-blue-900/20 to-purple-900/20 backdrop-blur border-blue-700/30">
-          <h2 className="text-sm font-semibold mb-4 text-center text-neutral-400">
-            Configuration de la partie
-          </h2>
-          <div className="flex items-center justify-around">
-            <div className="text-center">
-              <div className="text-2xl md:text-3xl mb-1">🔴</div>
-              <div className="text-xl md:text-2xl font-bold text-red-400">{settings.undercoverCount}</div>
-              <div className="text-xs text-neutral-400">Undercover</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl md:text-3xl mb-1">⚪</div>
-              <div className="text-xl md:text-2xl font-bold text-neutral-100">{settings.whiteCount}</div>
-              <div className="text-xs text-neutral-400">Mr.White</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl md:text-3xl mb-1">🟢</div>
-              <div className="text-xl md:text-2xl font-bold text-green-400">
-                {players.length - settings.undercoverCount - settings.whiteCount}
+        <Card className="bg-gradient-to-br from-blue-900/20 to-purple-900/20 backdrop-blur border-blue-700/30">
+            <h2 className="text-sm font-semibold mb-4 text-center text-neutral-400">
+              Configuration de la partie
+            </h2>
+            <div className="flex items-center justify-around">
+              <div className="text-center">
+                <div className="text-2xl md:text-3xl mb-1">🔴</div>
+                <div className="text-xl md:text-2xl font-bold text-red-400">{settings.undercoverCount}</div>
+                <div className="text-xs text-neutral-400">Undercover</div>
               </div>
-              <div className="text-xs text-neutral-400">Civils</div>
+              <div className="text-center">
+                <div className="text-2xl md:text-3xl mb-1">⚪</div>
+                <div className="text-xl md:text-2xl font-bold text-neutral-100">{settings.whiteCount}</div>
+                <div className="text-xs text-neutral-400">Mr.White</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl md:text-3xl mb-1">🟢</div>
+                <div className="text-xl md:text-2xl font-bold text-green-400">
+                  {players.length - settings.undercoverCount - settings.whiteCount}
+                </div>
+                <div className="text-xs text-neutral-400">Civils</div>
+              </div>
             </div>
-          </div>
-        </Card>
+          </Card>
 
         {/* Ajout de joueurs */}
-        <Card className="mb-6 bg-gradient-to-br from-neutral-800/50 to-neutral-800/30 backdrop-blur border-neutral-700/50">
+        <Card className="bg-gradient-to-br from-neutral-800/50 to-neutral-800/30 backdrop-blur border-neutral-700/50">
           <h2 className="text-lg font-semibold mb-4 flex items-center gap-2">
             <span className="text-2xl">👥</span>
             Ajouter des joueurs
@@ -94,7 +94,7 @@ export function PlayersScreen() {
 
         {/* Liste des joueurs */}
         {players.length > 0 && (
-          <Card className="mb-6 bg-gradient-to-br from-neutral-800/50 to-neutral-800/30 backdrop-blur border-neutral-700/50">
+          <Card className="bg-gradient-to-br from-neutral-800/50 to-neutral-800/30 backdrop-blur border-neutral-700/50">
             <h2 className="font-semibold mb-3 text-neutral-300">
               Joueurs ({players.length})
             </h2>
@@ -124,7 +124,7 @@ export function PlayersScreen() {
         )}
 
         {/* Configuration des rôles */}
-        <Card className="mb-6 bg-gradient-to-br from-blue-900/20 to-purple-900/20 backdrop-blur border-blue-700/30">
+        <Card className="bg-gradient-to-br from-blue-900/20 to-purple-900/20 backdrop-blur border-blue-700/30">
           <h2 className="text-lg font-semibold mb-4 flex items-center gap-2">
             <span className="text-2xl">⚙️</span>
             Configuration des rôles

@@ -12,7 +12,7 @@ export function VoteScreen() {
   const alivePlayers = players.filter((p) => p.alive);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-neutral-950 via-neutral-900 to-neutral-950 p-4 flex items-center justify-center">
+    <div className="min-h-screen bg-gradient-to-br from-neutral-950 via-neutral-900 to-neutral-950 p-6 md:p-8 flex items-center justify-center">
       <div className="max-w-md w-full">
         <div className="text-center mb-6">
           <div className="text-6xl mb-4">🗳️</div>
